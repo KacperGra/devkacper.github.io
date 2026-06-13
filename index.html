@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Kacper</title>
+  <style>
+    /* ========== COLORS — change here to restyle the whole page ========== */
+    :root {
+      --bg-color: #0f0f1a;
+      --card-color: #1a1a2e;
+      --accent-color: #7c4dff;
+      --text-color: #e0e0e0;
+      --muted-color: #888;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 16px;
+    }
+
+    /* ========== AVATAR ========== */
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+      margin-bottom: 16px;
+      object-fit: cover;
+    }
+
+    /* ========== HEADER ========== */
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .bio {
+      color: var(--muted-color);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      text-align: center;
+      max-width: 320px;
+    }
+
+    /* ========== SECTION TITLES ========== */
+    .section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-color);
+      margin-bottom: 12px;
+      align-self: flex-start;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* ========== LINKS ========== */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 32px;
+    }
+
+    a.link-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--card-color);
+      color: var(--text-color);
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid #ffffff10;
+      transition: transform 0.15s, border-color 0.15s;
+      font-size: 0.95rem;
+    }
+
+    a.link-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-color);
+    }
+
+    a.link-btn .icon {
+      font-size: 1.3rem;
+      width: 28px;
+      text-align: center;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      margin-top: auto;
+      padding-top: 32px;
+      color: var(--muted-color);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== AVATAR ===================== -->
+  <!-- Replace src with a link to your own photo/avatar  -->
+  <img
+    class="avatar"
+    src="https://avatars.githubusercontent.com/u/KacperGra"
+    alt="Dev Kacper avatar"
+  />
+
+  <!-- ===================== HEADER ===================== -->
+  <h1>Dev Kacper</h1>
+  <p class="bio">🎮 Indie game developer</p>
+
+  <!-- ===================== MY GAMES ===================== -->
+  <p class="section-title">🎮 My Games</p>
+  <div class="links">
+
+    <!-- COPY this block to add another game -->
+    <a class="link-btn" href="https://store.steampowered.com/app/2270210/DunHero/" target="_blank">
+      <span class="icon">🕹️</span>
+      <span>DunHero - Steam</span>
+    </a>
+
+    <a class="link-btn" href="https://play.google.com/store/apps/details?id=com.devkacper.dunhero" target="_blank">
+      <span class="icon">🕹️</span>
+      <span>DunHero - Google Play</span>
+    </a>
+
+    <!-- Example Steam link -->
+    <a class="link-btn" href="https://www.nintendo.com/us/store/products/dunhero-switch/" target="_blank">
+      <span class="icon">🎯</span>
+      <span>DunHero - Nintendo Switch</span>
+    </a>
+
+  </div>
+
+  <!-- ===================== SOCIALS ===================== -->
+  <p class="section-title">📱 Find Me</p>
+  <div class="links">
+
+    <a class="link-btn" href="https://twitter.com/YOUR_HANDLE" target="_blank">
+      <span class="icon">🐦</span>
+      <span>Twitter / X</span>
+    </a>
+
+    <a class="link-btn" href="https://youtube.com/@YOUR_CHANNEL" target="_blank">
+      <span class="icon">▶️</span>
+      <span>YouTube</span>
+    </a>
+
+    <a class="link-btn" href="https://tiktok.com/@YOUR_HANDLE" target="_blank">
+      <span class="icon">🎵</span>
+      <span>TikTok</span>
+    </a>
+
+    <a class="link-btn" href="https://discord.gg/YOUR_SERVER" target="_blank">
+      <span class="icon">💬</span>
+      <span>Discord</span>
+    </a>
+
+    <a class="link-btn" href="https://github.com/KacperGra" target="_blank">
+      <span class="icon">🐙</span>
+      <span>GitHub</span>
+    </a>
+
+  </div>
+
+  <footer>© 2025 Dev Kacper</footer>
+
+</body>
+</html>
