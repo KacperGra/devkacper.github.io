@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DunHero | Dev Kacper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg-color: #090b0f;
+      --panel-color: #141923;
+      --panel-border: #2b3343;
+      --accent-color: #f8c537;
+      --text-color: #f2f5fb;
+      --muted-color: #9aa8bf;
+      --max-width: 980px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 20%, #1b2a3e 0, transparent 34%),
+        radial-gradient(circle at 88% 12%, #2b1a0d 0, transparent 28%),
+        linear-gradient(160deg, #090b0f 0%, #0f1420 65%, #0f1624 100%);
+      color: var(--text-color);
+      font-family: 'Manrope', sans-serif;
+      padding: 32px 16px 56px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #dbe4f7;
+      border: 1px solid #415373;
+      background: #111b2b;
+      border-radius: 10px;
+      padding: 8px 12px;
+      margin-bottom: 16px;
+    }
+
+    .back-link:hover {
+      border-color: var(--accent-color);
+    }
+
+    .panel {
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #141b2a, #111824);
+      overflow: hidden;
+      box-shadow: 0 16px 38px #0000003d;
+    }
+
+    .header {
+      padding: 16px;
+      border-bottom: 1px solid #ffffff1f;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      letter-spacing: 1.5px;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin-top: 8px;
+      color: var(--muted-color);
+    }
+
+    .capsule {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #ffffff1f;
+      aspect-ratio: 920 / 430;
+      object-fit: cover;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .description {
+      color: #d6dfef;
+      line-height: 1.7;
+      font-size: 0.97rem;
+    }
+
+    .list {
+      margin-top: 14px;
+      display: grid;
+      gap: 8px;
+      color: #e2e9f7;
+      font-size: 0.93rem;
+    }
+
+    .actions {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .action-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .action-group.secondary {
+      padding-top: 10px;
+      border-top: 1px solid #ffffff1a;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #0a1019;
+      background: var(--accent-color);
+      border: 1px solid #00000022;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .btn-icon {
+      font-size: 0.95em;
+      line-height: 1;
+    }
+
+    .btn.alt {
+      background: #172233;
+      border-color: #314761;
+      color: #dde7f9;
+    }
+
+    @media (max-width: 860px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a class="back-link" href="../index.html">Back to main page</a>
+
+    <article class="panel">
+      <header class="header">
+        <h1>DunHero</h1>
+        <p class="subtitle">Action roguelite with deep build crafting and co-op chaos.</p>
+      </header>
+
+      <img
+        class="capsule"
+        src="../assets/DunHero%20Capsule.png"
+        alt="DunHero capsule art"
+      />
+
+      <section class="content">
+        <div>
+          <div class="actions">
+            <div class="action-group">
+              <a class="btn" href="https://store.steampowered.com/app/2270210/DunHero/" target="_blank" rel="noopener noreferrer"><span class="btn-icon">🎮</span>Steam</a>
+              <a class="btn alt" href="https://play.google.com/store/apps/details?id=com.devkacper.dunhero" target="_blank" rel="noopener noreferrer"><span class="btn-icon">📱</span>Google Play</a>
+              <a class="btn alt" href="https://www.nintendo.com/us/store/products/dunhero-switch/" target="_blank" rel="noopener noreferrer"><span class="btn-icon">🕹️</span>Nintendo Switch</a>
+            </div>
+            <div class="action-group secondary">
+              <a class="btn alt" href="https://www.youtube.com/watch?v=oqkQOFGefi4" target="_blank" rel="noopener noreferrer"><span class="btn-icon">🎬</span>Trailer</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="description">
+            DunHero is a fantasy action roguelite where each run lets you combine new items,
+            classes, and upgrades to create powerful builds. Explore changing worlds, fight
+            intense bosses, and jump into co-op sessions with friends.
+          </p>
+
+          <div class="list" aria-label="Game highlights">
+            <p>• 600+ items to discover</p>
+            <p>• 28 playable classes</p>
+            <p>• 80+ level-up cards</p>
+            <p>• 8 worlds with unique enemies and bosses</p>
+            <p>• Solo or 2-4 player co-op</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

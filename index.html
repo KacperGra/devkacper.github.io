@@ -4,178 +4,340 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dev Kacper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    /* ========== COLORS — change here to restyle the whole page ========== */
     :root {
-      --bg-color: #0f0f1a;
-      --card-color: #1a1a2e;
-      --accent-color: #7c4dff;
-      --text-color: #e0e0e0;
-      --muted-color: #888;
+      --bg-color: #090b0f;
+      --panel-color: #141923;
+      --panel-border: #2b3343;
+      --accent-color: #f8c537;
+      --accent-2-color: #67d7ff;
+      --text-color: #f2f5fb;
+      --muted-color: #9aa8bf;
+      --max-width: 980px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       min-height: 100vh;
-      padding: 40px 16px;
+      background:
+        radial-gradient(circle at 12% 18%, #1b2a3e 0, transparent 34%),
+        radial-gradient(circle at 88% 12%, #2b1a0d 0, transparent 28%),
+        linear-gradient(160deg, #090b0f 0%, #0f1420 65%, #0f1624 100%);
+      color: var(--text-color);
+      font-family: 'Manrope', sans-serif;
+      padding: 38px 16px 56px;
     }
 
-    /* ========== AVATAR ========== */
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 34px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--panel-border);
+      background: linear-gradient(180deg, #121a28, #101722);
+      box-shadow: 0 14px 38px #00000044;
+    }
+
     .avatar {
       width: 100px;
       height: 100px;
       border-radius: 50%;
       border: 3px solid var(--accent-color);
-      margin-bottom: 16px;
       object-fit: cover;
     }
 
-    /* ========== HEADER ========== */
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1.5px;
+      font-size: 3rem;
+      line-height: 1;
     }
 
     .bio {
       color: var(--muted-color);
-      font-size: 0.95rem;
-      margin-bottom: 32px;
-      text-align: center;
-      max-width: 320px;
+      font-size: 1rem;
+      margin-top: 6px;
     }
 
-    /* ========== SECTION TITLES ========== */
     .section-title {
-      font-size: 0.75rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--accent-color);
-      margin-bottom: 12px;
-      align-self: flex-start;
-      width: 100%;
-      max-width: 400px;
+      margin-bottom: 14px;
     }
 
-    /* ========== LINKS ========== */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 32px;
+    .games-grid {
+      display: grid;
+      gap: 22px;
     }
 
-    a.link-btn {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background-color: var(--card-color);
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 14px 18px;
+    .game-card {
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: linear-gradient(180deg, #141b2a, #111824);
+      overflow: hidden;
+      box-shadow: 0 16px 38px #0000003d;
+    }
+
+    .game-head {
+      display: grid;
+      grid-template-columns: minmax(200px, 320px) 1fr;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .capsule {
+      width: 100%;
+      max-width: 100%;
       border-radius: 12px;
-      border: 1px solid #ffffff10;
-      transition: transform 0.15s, border-color 0.15s;
+      border: 1px solid #ffffff1a;
+      display: block;
+      aspect-ratio: 460 / 215;
+      object-fit: cover;
+    }
+
+    .game-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+    }
+
+    .game-meta {
+      color: var(--muted-color);
+      margin-top: 5px;
+      font-size: 0.92rem;
+    }
+
+    .game-desc {
+      margin-top: 12px;
+      color: #d8e0ef;
+      line-height: 1.6;
       font-size: 0.95rem;
     }
 
-    a.link-btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent-color);
+    .tag-row {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    a.link-btn .icon {
-      font-size: 1.3rem;
-      width: 28px;
-      text-align: center;
+    .tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.3px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid #ffffff24;
+      color: #dbe4f5;
+      background: #ffffff0e;
     }
 
-    /* ========== FOOTER ========== */
+    .actions {
+      padding: 0 16px 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .action-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .action-group.secondary {
+      padding-top: 10px;
+      border-top: 1px solid #ffffff1a;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #0a1019;
+      background: var(--accent-color);
+      border: 1px solid #00000022;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 0.16s ease, filter 0.16s ease;
+    }
+
+    .btn-icon {
+      font-size: 0.95em;
+      line-height: 1;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .btn.alt {
+      background: #172233;
+      border-color: #314761;
+      color: #dde7f9;
+    }
+
+    .btn.disabled {
+      opacity: 0.55;
+      pointer-events: none;
+      filter: grayscale(0.2);
+    }
+
+    .socials {
+      margin-top: 30px;
+    }
+
+    .social-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #dbe6fb;
+      border: 1px solid #3e4f6a;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #121c2a;
+      transition: border-color 0.16s ease;
+    }
+
+    .social-link:hover {
+      border-color: var(--accent-2-color);
+    }
+
     footer {
-      margin-top: auto;
-      padding-top: 32px;
+      margin-top: 38px;
       color: var(--muted-color);
       font-size: 0.8rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero,
+      .game-head {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar {
+        width: 88px;
+        height: 88px;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
     }
   </style>
 </head>
 <body>
+  <main class="page">
+    <section class="hero">
+      <img
+        class="avatar"
+        src="https://avatars.akamai.steamstatic.com/dae38f7715acb5664dd0cb9a8a3a60160b003501_full.jpg"
+        alt="Dev Kacper avatar"
+      />
+      <div>
+        <h1>Dev Kacper</h1>
+        <p class="bio">Indie game developer building replayable action roguelite adventures.</p>
+      </div>
+    </section>
 
-  <!-- ===================== AVATAR ===================== -->
-  <!-- Replace src with a link to your own photo/avatar  -->
-  <img
-    class="avatar"
-    src="https://avatars.githubusercontent.com/u/KacperGra"
-    alt="Dev Kacper avatar"
-  />
+    <p class="section-title">Games</p>
+    <section class="games-grid" aria-label="Game showcase">
+      <article class="game-card" id="dunhero">
+        <div class="game-head">
+          <img
+            class="capsule"
+            src="assets/DunHero%20Capsule.png"
+            alt="DunHero capsule art"
+          />
+          <div>
+            <h2 class="game-title">DunHero</h2>
+            <p class="game-meta">Action roguelite • Solo or 2-4 co-op • PC / Android / Switch</p>
+            <p class="game-desc">
+              Choose your class, craft absurd item synergies, and clear dangerous worlds in fast,
+              replayable runs.
+            </p>
+            <div class="tag-row" aria-label="DunHero features">
+              <span class="tag">600+ items</span>
+              <span class="tag">28 classes</span>
+              <span class="tag">8 worlds</span>
+            </div>
+          </div>
+        </div>
 
-  <!-- ===================== HEADER ===================== -->
-  <h1>Dev Kacper</h1>
-  <p class="bio">🎮 Indie game developer</p>
+        <div class="actions">
+          <div class="action-group">
+            <a class="btn" href="https://store.steampowered.com/app/2270210/DunHero/" target="_blank" rel="noopener noreferrer"><span class="btn-icon">🎮</span>Steam</a>
+            <a class="btn alt" href="https://play.google.com/store/apps/details?id=com.devkacper.dunhero" target="_blank" rel="noopener noreferrer"><span class="btn-icon">📱</span>Google Play</a>
+            <a class="btn alt" href="https://www.nintendo.com/us/store/products/dunhero-switch/" target="_blank" rel="noopener noreferrer"><span class="btn-icon">🕹️</span>Nintendo Switch</a>
+          </div>
+          <div class="action-group secondary">
+            <a class="btn alt" href="https://www.youtube.com/watch?v=oqkQOFGefi4" target="_blank" rel="noopener noreferrer"><span class="btn-icon">🎬</span>Trailer</a>
+            <a class="btn alt" href="games/dunhero.html"><span class="btn-icon">📖</span>Full Game Page</a>
+          </div>
+        </div>
+      </article>
 
-  <!-- ===================== MY GAMES ===================== -->
-  <p class="section-title">🎮 My Games</p>
-  <div class="links">
+      <article class="game-card" id="emojis-vs-zombies">
+        <div class="game-head">
+          <img
+            class="capsule"
+            src="assets/store_capsule_main.png"
+            alt="Emojis vs Zombies capsule art"
+          />
+          <div>
+            <h2 class="game-title">Emojis vs Zombies</h2>
+            <p class="game-meta">Idle / Incremental • Pack opening elements • PC • Steam release soon</p>
+            <p class="game-desc">
+              Build your emoji squad over time, open packs to unlock upgrades and new units,
+              and push deeper zombie waves in a satisfying incremental loop.
+            </p>
+            <div class="tag-row" aria-label="Emojis vs Zombies features">
+              <span class="tag">Coming soon</span>
+              <span class="tag">Idle / Incremental</span>
+              <span class="tag">Pack opening</span>
+              <span class="tag">Steam page in 1-2 weeks</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- COPY this block to add another game -->
-    <a class="link-btn" href="https://store.steampowered.com/app/2270210/DunHero/" target="_blank">
-      <span class="icon">🕹️</span>
-      <span>DunHero - Steam</span>
-    </a>
+        <div class="actions">
+          <div class="action-group">
+            <a class="btn disabled" href="#" aria-disabled="true"><span class="btn-icon">🎮</span>Steam (Soon)</a>
+          </div>
+          <div class="action-group secondary">
+            <a class="btn alt disabled" href="#" aria-disabled="true"><span class="btn-icon">🎬</span>Trailer (Soon)</a>
+            <a class="btn alt" href="games/emojis-vs-zombies.html"><span class="btn-icon">📖</span>Full Game Page</a>
+          </div>
+        </div>
+      </article>
+    </section>
 
-    <a class="link-btn" href="https://play.google.com/store/apps/details?id=com.devkacper.dunhero" target="_blank">
-      <span class="icon">🕹️</span>
-      <span>DunHero - Google Play</span>
-    </a>
+    <section class="socials" aria-label="Find me">
+      <p class="section-title">Find Me</p>
+      <a class="social-link" href="https://x.com/dev_kaacper" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+    </section>
 
-    <!-- Example Steam link -->
-    <a class="link-btn" href="https://www.nintendo.com/us/store/products/dunhero-switch/" target="_blank">
-      <span class="icon">🎯</span>
-      <span>DunHero - Nintendo Switch</span>
-    </a>
-
-  </div>
-
-  <!-- ===================== SOCIALS ===================== -->
-  <p class="section-title">📱 Find Me</p>
-  <div class="links">
-
-    <a class="link-btn" href="https://twitter.com/YOUR_HANDLE" target="_blank">
-      <span class="icon">🐦</span>
-      <span>Twitter / X</span>
-    </a>
-
-    <a class="link-btn" href="https://youtube.com/@YOUR_CHANNEL" target="_blank">
-      <span class="icon">▶️</span>
-      <span>YouTube</span>
-    </a>
-
-    <a class="link-btn" href="https://tiktok.com/@YOUR_HANDLE" target="_blank">
-      <span class="icon">🎵</span>
-      <span>TikTok</span>
-    </a>
-
-    <a class="link-btn" href="https://discord.gg/YOUR_SERVER" target="_blank">
-      <span class="icon">💬</span>
-      <span>Discord</span>
-    </a>
-
-    <a class="link-btn" href="https://github.com/KacperGra" target="_blank">
-      <span class="icon">🐙</span>
-      <span>GitHub</span>
-    </a>
-
-  </div>
-
-  <footer>© 2025 Dev Kacper</footer>
-
+    <footer>© 2026 Dev Kacper</footer>
+  </main>
 </body>
 </html>
